@@ -1,0 +1,4 @@
+applications:
+- name: resourceful
+  buildpack: https://github.com/cloudfoundry/go-buildpack.git
+  command: resourceful

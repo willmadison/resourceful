@@ -1,0 +1,30 @@
+language: go
+notifications:
+  email: false
+
+env:
+  - GO111MODULE=on
+
+go:
+  - 1.11
+
+sudo: false
+stages:
+  - build
+  - deploy
+
+jobs:
+  include:
+    - stage: build
+      language: go
+      install: skip
+      script: go build
+    - stage: deploy
+      language: go
+      deploy:
+        provider: cloudfoundry
+        api: $CF_API_URL
+        username: $CF_USERNAME
+        password: $CF_PASSWORD
+        organization: $CF_ORG
+        space: development
