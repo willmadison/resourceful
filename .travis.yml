@@ -10,11 +10,16 @@ go:
 
 sudo: false
 stages:
+  - test
   - build
   - deploy
 
 jobs:
   include:
+    - stage: test
+      language: go
+      install: skip
+      script: go test
     - stage: build
       language: go
       install: skip
