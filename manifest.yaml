@@ -2,5 +2,7 @@ applications:
 - name: resourceful
   buildpack: https://github.com/cloudfoundry/go-buildpack.git
   command: resourceful
+  memory: 256M
+  instances: 2
   env:
     GOVERSION: go1.11
