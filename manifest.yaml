@@ -2,3 +2,5 @@ applications:
 - name: resourceful
   buildpack: https://github.com/cloudfoundry/go-buildpack.git
   command: resourceful
+  env:
+    GOVERSION: go1.11
