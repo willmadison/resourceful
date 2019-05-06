@@ -80,7 +80,7 @@ func registerEndpoints(repo resourceful.Repository) *mux.Router {
 					Text string `json:"text"`
 				}{
 					{
-						Text: "Resource added. Please find it here: URL_PLACEHOLDER",
+						Text: fmt.Sprintf("%s resource added. Please find it here: URL_PLACEHOLDER", resource.Title),
 					},
 				},
 			}
@@ -91,6 +91,7 @@ func registerEndpoints(repo resourceful.Repository) *mux.Router {
 				return
 			}
 
+			response.Header().Set("Content-Type", "application/json")
 			response.Write(commandResponse)
 		}
 	}

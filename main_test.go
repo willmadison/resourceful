@@ -129,6 +129,7 @@ func TestFullSlashCommands(t *testing.T) {
 	response := w.Result()
 
 	assert.Equal(t, 200, response.StatusCode)
+	assert.Equal(t, "application/json", response.Header.Get("Content-Type"))
 	assert.Equal(t, true, callbackInvoked)
 
 	u, _ := url.Parse("http://stackoverflow.com")
@@ -165,7 +166,7 @@ func TestFullSlashCommands(t *testing.T) {
 			Text string `json:"text"`
 		}{
 			{
-				Text: "Resource added. Please find it here: URL_PLACEHOLDER",
+				Text: "stack overflow resource added. Please find it here: URL_PLACEHOLDER",
 			},
 		},
 	}
