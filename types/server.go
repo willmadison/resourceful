@@ -87,13 +87,6 @@ func (s *Server) handleInbox() http.HandlerFunc {
 }
 
 func (s *Server) withSlackVerification(h http.HandlerFunc) http.HandlerFunc {
-	includeValidation := true
-
-	validationFlag := os.Getenv("WITH_VALIDATION")
-	if validationFlag != "" {
-		includeValidation, _ = strconv.ParseBool(validationFlag)
-	}
-
 	return func(response http.ResponseWriter, req *http.Request) {
 		validateSlackRequest := func(request *http.Request) error {
 			var b bytes.Buffer
@@ -164,6 +157,13 @@ func (s *Server) withSlackVerification(h http.HandlerFunc) http.HandlerFunc {
 			}
 
 			return nil
+		}
+
+		includeValidation := true
+
+		validationFlag := os.Getenv("WITH_VALIDATION")
+		if validationFlag != "" {
+			includeValidation, _ = strconv.ParseBool(validationFlag)
 		}
 
 		if includeValidation {
