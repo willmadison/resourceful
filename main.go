@@ -18,7 +18,7 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/willmadison/resourceful/repository"
-	"github.com/willmadison/resourceful/resourceful"
+	resourceful "github.com/willmadison/resourceful/types"
 )
 
 func main() {

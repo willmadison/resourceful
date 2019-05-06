@@ -3,7 +3,7 @@ package repository
 import (
 	"net/url"
 
-	"github.com/willmadison/resourceful/resourceful"
+	resourceful "github.com/willmadison/resourceful/types"
 )
 
 // InMemoryRepository stores its resources in memory.

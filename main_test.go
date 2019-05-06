@@ -15,7 +15,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/willmadison/resourceful/repository"
-	"github.com/willmadison/resourceful/resourceful"
+	resourceful "github.com/willmadison/resourceful/types"
 )
 
 func setupHandler() http.HandlerFunc {

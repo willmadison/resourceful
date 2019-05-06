@@ -1,4 +1,4 @@
-package resourceful
+package types
 
 import "net/url"
 
