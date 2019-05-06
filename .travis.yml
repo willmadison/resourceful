@@ -19,7 +19,7 @@ jobs:
     - stage: test
       language: go
       install: skip
-      script: go test
+      script: go test -v ./...
     - stage: build
       language: go
       install: skip
